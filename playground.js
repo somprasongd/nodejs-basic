@@ -1,18 +1,48 @@
-const pet = {
-  name: 'Stamp',
-  age: 4
-};
+console.log('Start');
 
-const printName = ({ name }) => {
-  console.log(name);
+// // callback
+// const fetchData = callback => {
+//   setTimeout(() => {
+//     callback('Done!');
+//   }, 1000);
+// }
+
+// setTimeout(() => {
+//   console.log('Timer is done!');
+//   fetchData(text => {
+//     console.log(text);
+//   })
+// }, 2000);
+
+// promise
+const fetchData = () => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Done!');
+    }, 2000);
+  });
+  return promise;
+  
 }
 
-printName(pet);
+// setTimeout(() => {
+//   console.log('Timer is done!');
+//   fetchData()
+//     .then(text => {
+//       console.log(text);
+//       return fetchData();
+//     })
+//     .then(text2 => {
+//       console.log(text2);      
+//     });
+// }, 2000);
 
-const { name, age } = pet;
-console.log(name, age);
+setTimeout(async () => {
+  console.log('Timer is done!');
+  const text = await fetchData();
+  console.log(text);
+  const text2 = await fetchData();
+  console.log(text2);
+}, 2000);
 
-const pets = ['Stamp', 'Snow'];
-const [stamp, snow] = pets;
-console.log(stamp, snow);
-
+console.log('End');
