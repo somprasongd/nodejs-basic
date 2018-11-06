@@ -14,14 +14,7 @@ function petInfo(petName, petAge, petIsSterilized) {
     sterilized = 'False';
   }
 
-  return (
-    'Pet name is ' +
-    petName +
-    ', age is ' +
-    petAge +
-    ' and pet is sterilized: ' +
-    sterilized
-  );
+  return `Pet name is ${petName}, age is ${petAge} and pet is sterilized: ${sterilized}`;
 }
 
 console.log(petInfo(name, age, isSterilized));
