@@ -1,9 +1,12 @@
-var name = 'Stamp';
-var age = 4;
-var isSterilized = true;
+const name = 'Stamp';
+let age = 4;
+const isSterilized = true;
+
+// name = 'Snow';
+age = 5;
 
 function petInfo(petName, petAge, petIsSterilized) {
-  var sterilized = '';
+  let sterilized = '';
 
   if (petIsSterilized) {
     sterilized = 'Yes';
