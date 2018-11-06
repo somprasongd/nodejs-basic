@@ -1,36 +1,18 @@
-const pets = ['Stamp', 'Snow'];
-
-// pets.push('Slim');
-// console.log(pets);
-
-// for (let pet of pets) {
-//   console.log(pet);
-// }
-
-// console.log(pets.map(pet => 'Name: ' + pet));
-// console.log(pets);
-
-// console.log(pets.filter(pet => pet.length > 4));
-// console.log(pets);
-
-// console.log(pets.reduce((prev, curr) => prev + ', ' + curr ));
-// console.log(pets);
-
-// spread array
-const copiedArray = [...pets];
-console.log(copiedArray);
-
-// spread object
 const pet = {
   name: 'Stamp',
   age: 4
 };
-const copiesObject = { ...pet };
-console.log(copiesObject);
 
-// rest array
-const toArray = (...args) => {
-  return args;
+const printName = ({ name }) => {
+  console.log(name);
 }
 
-console.log(toArray(1, 2, 3, 4, 5));
+printName(pet);
+
+const { name, age } = pet;
+console.log(name, age);
+
+const pets = ['Stamp', 'Snow'];
+const [stamp, snow] = pets;
+console.log(stamp, snow);
+
