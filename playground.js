@@ -5,7 +5,7 @@ const isSterilized = true;
 // name = 'Snow';
 age = 5;
 
-function petInfo(petName, petAge, petIsSterilized) {
+const petInfo = function (petName, petAge, petIsSterilized) {
   let sterilized = '';
 
   if (petIsSterilized) {
