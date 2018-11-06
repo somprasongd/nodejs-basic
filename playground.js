@@ -5,7 +5,7 @@ const isSterilized = true;
 // name = 'Snow';
 age = 5;
 
-const petInfo = function (petName, petAge, petIsSterilized) {
+const petInfo = (petName, petAge, petIsSterilized) => {
   let sterilized = '';
 
   if (petIsSterilized) {
@@ -18,3 +18,12 @@ const petInfo = function (petName, petAge, petIsSterilized) {
 }
 
 console.log(petInfo(name, age, isSterilized));
+
+const add = (a, b) => a + b;
+console.log(add(1, 2));
+
+const addOne = a => a + 1;
+console.log(addOne(1));
+
+const addRandom = () => 1 + 3;
+console.log(addRandom());
