@@ -1,0 +1,19 @@
+{
+  "workbench.editor.tabSizing": "shrink",
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "editor.cursorWidth": 2,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "files.exclude": {
+    "**/.next": true
+  },
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+}
