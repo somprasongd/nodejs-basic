@@ -1,4 +1,5 @@
 const path = require('path');
+const ejs = require('ejs');
 const express = require('express');
 const morgan = require('morgan');
 const todos = require('./routes/todos');
@@ -13,12 +14,14 @@ app.use(express.json());
 if (app.get('env') === 'development') {
   app.use(morgan('dev'));
 }
-
 app.use(express.static('public'));
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-// route
+// default route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.render('index', {name: "Somprasong"});
 });
 
 app.use('/todos', todos);
