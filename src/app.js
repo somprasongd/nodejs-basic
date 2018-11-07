@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const todos = require('./routes/todos');
@@ -13,9 +14,11 @@ if (app.get('env') === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use(express.static('public'));
+
 // route
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.use('/todos', todos);
