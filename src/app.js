@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -7,12 +8,9 @@ app.use(express.urlencoded({ extended: true }));
 // parse application/json
 app.use(express.json());
 // logger
-app.use((req, res, next) => {
-	const now = new Date().toString();
-	const log = `${now}: ${req.method} ${req.url}`;
-	console.log(log);
-	next();
-});
+if (app.get('env') === 'development') {
+  app.use(morgan('dev'));
+}
 
 // route
 app.get('/', (req, res) => {
