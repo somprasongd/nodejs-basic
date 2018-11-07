@@ -2,37 +2,21 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+// parse application/json
+app.use(express.json());
+
 // route
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.post('/', function (req, res) {
+app.post('/message', function (req, res) {
+  console.log(req.body);
   res.send('Got a POST request');
 });
-
-app.put('/user', function (req, res) {
-  res.send('Got a PUT request at /user');
-});
-
-app.delete('/user', function (req, res) {
-  res.send('Got a DELETE request at /user');
-});
-
-// path parameters
-app.get('/greeting/:name', (req, res) => {
-  console.log(req.params);
-  const {name} = req.params;
-  res.send(`Hello ${name}`);
-});
-
-// query parameters
-app.get('/greeting', (req, res) => {
-  console.log(req.query);
-  const {name} = req.query;
-  res.send(`Hello ${name}`);
-});
-
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}!`);
