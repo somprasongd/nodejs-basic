@@ -4,9 +4,15 @@ const port = process.env.PORT || 3000;
 
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
 // parse application/json
 app.use(express.json());
+// logger
+app.use((req, res, next) => {
+	const now = new Date().toString();
+	const log = `${now}: ${req.method} ${req.url}`;
+	console.log(log);
+	next();
+});
 
 // route
 app.get('/', (req, res) => {
