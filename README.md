@@ -22,7 +22,7 @@ CMD ["npm", "start"]
 
 ## .dockerignore
 
-```
+```text
 .vscode/
 node_modules/
 
