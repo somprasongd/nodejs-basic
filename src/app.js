@@ -21,7 +21,13 @@ app.set('view engine', 'ejs');
 
 // default route
 app.get('/', (req, res) => {
-  res.render('index', {name: "Somprasong"});
+  res.render('index', {
+    name: "Somprasong",
+    pets: [
+      "Stamp",
+      "Snow"
+    ]
+  });
 });
 
 app.use('/todos', todos);
